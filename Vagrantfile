@@ -57,7 +57,7 @@ Vagrant.configure(2) do |config|
   # View the documentation for the provider you are using for more
   # information on available options.
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "1024"
+    vb.memory = "2048"
   end
 
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
@@ -85,7 +85,7 @@ Vagrant.configure(2) do |config|
       pip install ecdsa 'paramiko<2' markupsafe ansible
 
       rm -rf private-isu
-      git clone https://github.com/catatsuy/private-isu.git
+      git clone https://github.com/takashabe/private-isu.git
       (
         cd private-isu/provisioning
         PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true ansible-playbook -i hosts --connection=local image/ansible/*.yml
@@ -103,7 +103,7 @@ Vagrant.configure(2) do |config|
       pip install ecdsa 'paramiko<2' markupsafe ansible
 
       rm -rf private-isu
-      git clone https://github.com/catatsuy/private-isu.git
+      git clone https://github.com/takashabe/private-isu.git
       (
         cd private-isu/ansible
         PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true ansible-playbook -i production --connection=local setup-bench.yml
